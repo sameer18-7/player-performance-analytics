@@ -1,0 +1,61 @@
+player_name,runs,balls_faced,format,dismissal,fours,sixes,centuries,half_centuries,opponent,match_date
+virat kohli,72,58,odi,caught,8,2,0,1,australia,2024-01-15
+virat kohli,112,95,odi,not out,12,3,1,0,england,2024-01-08
+virat kohli,45,39,odi,bowled,6,1,0,0,south africa,2023-12-30
+virat kohli,88,72,odi,caught,10,2,0,1,new zealand,2023-12-22
+virat kohli,34,29,odi,lbw,4,0,0,0,pakistan,2023-12-15
+virat kohli,103,85,odi,not out,11,2,1,0,sri lanka,2023-12-08
+virat kohli,67,54,odi,caught,8,1,0,1,bangladesh,2023-12-01
+virat kohli,91,72,odi,caught,10,2,0,1,west indies,2023-11-24
+virat kohli,56,48,odi,run out,7,0,0,1,afghanistan,2023-11-17
+virat kohli,79,61,odi,caught,9,1,0,1,ireland,2023-11-10
+virat kohli,108,88,test,not out,13,1,1,0,australia,2023-11-03
+virat kohli,45,67,test,lbw,5,0,0,0,england,2023-10-27
+virat kohli,82,95,test,caught,10,0,0,1,south africa,2023-10-20
+virat kohli,34,41,test,bowled,4,0,0,0,new zealand,2023-10-13
+virat kohli,65,78,test,caught,8,0,0,1,west indies,2023-10-06
+virat kohli,42,35,t20i,caught,5,2,0,0,australia,2023-09-29
+virat kohli,68,48,t20i,not out,7,3,0,1,england,2023-09-22
+virat kohli,51,38,t20i,run out,6,2,0,1,pakistan,2023-09-15
+virat kohli,37,29,t20i,caught,4,1,0,0,sri lanka,2023-09-08
+virat kohli,89,56,t20i,not out,9,4,0,1,bangladesh,2023-09-01
+rohit sharma,65,48,odi,caught,8,2,0,1,australia,2024-01-12
+rohit sharma,23,19,odi,bowled,3,0,0,0,england,2024-01-05
+rohit sharma,89,72,odi,caught,10,2,0,1,south africa,2023-12-28
+rohit sharma,112,88,odi,not out,11,5,1,0,new zealand,2023-12-21
+rohit sharma,45,38,odi,lbw,5,1,0,0,pakistan,2023-12-14
+rohit sharma,67,52,odi,caught,7,2,0,1,sri lanka,2023-12-07
+rohit sharma,34,28,odi,run out,4,0,0,0,bangladesh,2023-11-30
+rohit sharma,98,76,odi,caught,11,3,0,1,west indies,2023-11-23
+rohit sharma,76,58,odi,caught,9,2,0,1,afghanistan,2023-11-16
+rohit sharma,52,43,odi,bowled,6,1,0,1,ireland,2023-11-09
+rohit sharma,78,82,test,caught,9,1,0,1,australia,2023-11-02
+rohit sharma,42,55,test,lbw,5,0,0,0,england,2023-10-26
+rohit sharma,91,98,test,not out,11,1,0,1,south africa,2023-10-19
+rohit sharma,56,72,test,caught,7,0,0,1,new zealand,2023-10-12
+rohit sharma,38,45,test,bowled,4,0,0,0,west indies,2023-10-05
+rohit sharma,87,52,t20i,not out,8,6,0,1,australia,2023-09-28
+rohit sharma,45,32,t20i,caught,5,2,0,0,england,2023-09-21
+rohit sharma,72,48,t20i,caught,7,4,0,1,pakistan,2023-09-14
+rohit sharma,34,26,t20i,bowled,4,1,0,0,sri lanka,2023-09-07
+rohit sharma,95,58,t20i,not out,9,5,0,1,bangladesh,2023-08-31
+ms dhoni,68,72,odi,not out,7,1,0,1,australia,2024-01-10
+ms dhoni,45,52,odi,caught,5,0,0,0,england,2024-01-03
+ms dhoni,82,76,odi,not out,8,2,0,1,south africa,2023-12-27
+ms dhoni,56,61,odi,run out,6,1,0,1,new zealand,2023-12-20
+ms dhoni,34,38,odi,bowled,4,0,0,0,pakistan,2023-12-13
+ms dhoni,91,88,odi,not out,9,2,0,1,sri lanka,2023-12-06
+ms dhoni,48,52,odi,caught,5,1,0,0,bangladesh,2023-11-29
+ms dhoni,73,68,odi,not out,7,2,0,1,west indies,2023-11-22
+ms dhoni,41,45,odi,caught,4,1,0,0,afghanistan,2023-11-15
+ms dhoni,65,58,odi,not out,6,2,0,1,ireland,2023-11-08
+ms dhoni,52,78,test,caught,6,0,0,1,australia,2023-11-01
+ms dhoni,38,65,test,lbw,4,0,0,0,england,2023-10-25
+ms dhoni,67,82,test,not out,7,1,0,1,south africa,2023-10-18
+ms dhoni,45,58,test,caught,5,0,0,0,new zealand,2023-10-11
+ms dhoni,71,88,test,not out,8,0,0,1,west indies,2023-10-04
+ms dhoni,42,35,t20i,caught,5,1,0,0,australia,2023-09-27
+ms dhoni,58,42,t20i,not out,6,2,0,1,england,2023-09-20
+ms dhoni,36,31,t20i,run out,4,1,0,0,pakistan,2023-09-13
+ms dhoni,65,48,t20i,not out,7,2,0,1,sri lanka,2023-09-06
+ms dhoni,51,38,t20i,caught,5,2,0,1,bangladesh,2023-08-30

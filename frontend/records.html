@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Records - Cricket Analytics</title>
+    <link rel="stylesheet" href="records-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Navigation Header -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">
+                <span class="logo-icon">🏏</span>
+                <span class="logo-text">CRICKET ANALYTICS</span>
+            </a>
+            <div class="nav-actions">
+                <a href="player.html" class="nav-back">← Back to Options</a>
+                <div class="nav-player-name" id="nav-player-name">Loading...</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout Container -->
+    <div class="records-layout">
+        
+        <!-- LEFT PANEL - PERSISTENT PROFILE -->
+        <aside class="profile-panel" id="profile-panel">
+            
+            <!-- Player Bio Card -->
+            <div class="profile-card bio-card">
+                <div class="card-header">
+                    <span class="card-icon">👤</span>
+                    <h3 class="card-title">Player Profile</h3>
+                </div>
+                
+                <div class="player-photo-wrapper">
+                    <div class="player-photo" id="player-photo">
+                        <span class="photo-initial" id="photo-initial">V</span>
+                    </div>
+                    <button class="floating-heart-btn" id="floating-heart-btn" title="Add to Favourites">
+                        <span class="heart-icon">♡</span>
+                    </button>
+                </div>
+                
+                <div class="bio-content">
+                    <div class="bio-field">
+                        <span class="field-label">Full Name</span>
+                        <span class="field-value" id="full-name">Virat Kohli</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Date of Birth</span>
+                        <span class="field-value" id="dob">November 5, 1988 (36 years)</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Birthplace</span>
+                        <span class="field-value" id="birthplace">Delhi, India</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Nickname</span>
+                        <span class="field-value" id="nickname">King Kohli, Chikoo</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Role</span>
+                        <span class="field-value" id="role">Batsman</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Batting Style</span>
+                        <span class="field-value" id="batting-style">Right-hand bat</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Bowling Style</span>
+                        <span class="field-value" id="bowling-style">Right-arm medium</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">National Team</span>
+                        <span class="field-value" id="national-team">India</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">IPL Teams</span>
+                        <span class="field-value" id="ipl-teams">Royal Challengers Bangalore</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Other Teams</span>
+                        <span class="field-value" id="other-teams">Delhi, South Delhi</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ICC Rankings Card -->
+            <div class="profile-card rankings-card">
+                <div class="card-header">
+                    <span class="card-icon">🏆</span>
+                    <h3 class="card-title">ICC Rankings</h3>
+                </div>
+                
+                <div class="rankings-content">
+                    
+                    <!-- Test Rankings -->
+                    <div class="ranking-format">
+                        <div class="format-header">
+                            <span class="format-badge test">Test</span>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="ranking-item">
+                                <span class="rank-label">Batting</span>
+                                <div class="rank-values">
+                                    <span class="current-rank" id="test-bat-current">8</span>
+                                    <span class="rank-separator">/</span>
+                                    <span class="best-rank">Best: <span id="test-bat-best">1</span></span>
+                                </div>
+                            </div>
+                            <div class="ranking-item">
+                                <span class="rank-label">Bowling</span>
+                                <div class="rank-values">
+                                    <span class="current-rank">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ODI Rankings -->
+                    <div class="ranking-format">
+                        <div class="format-header">
+                            <span class="format-badge odi">ODI</span>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="ranking-item">
+                                <span class="rank-label">Batting</span>
+                                <div class="rank-values">
+                                    <span class="current-rank" id="odi-bat-current">5</span>
+                                    <span class="rank-separator">/</span>
+                                    <span class="best-rank">Best: <span id="odi-bat-best">1</span></span>
+                                </div>
+                            </div>
+                            <div class="ranking-item">
+                                <span class="rank-label">Bowling</span>
+                                <div class="rank-values">
+                                    <span class="current-rank">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- T20I Rankings -->
+                    <div class="ranking-format">
+                        <div class="format-header">
+                            <span class="format-badge t20">T20I</span>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="ranking-item">
+                                <span class="rank-label">Batting</span>
+                                <div class="rank-values">
+                                    <span class="current-rank" id="t20-bat-current">12</span>
+                                    <span class="rank-separator">/</span>
+                                    <span class="best-rank">Best: <span id="t20-bat-best">1</span></span>
+                                </div>
+                            </div>
+                            <div class="ranking-item">
+                                <span class="rank-label">Bowling</span>
+                                <div class="rank-values">
+                                    <span class="current-rank">--</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- RIGHT PANEL - FORMAT STATS WITH SLIDING ANIMATION -->
+        <main class="stats-panel">
+            
+            <!-- Format Tabs -->
+            <div class="format-tabs">
+                <button class="tab-button active" data-format="odi">ODI</button>
+                <button class="tab-button" data-format="test">TEST</button>
+                <button class="tab-button" data-format="t20i">T20I</button>
+                <button class="tab-button" data-format="overall">OVERALL</button>
+            </div>
+
+            <!-- Stats Container with Sliding Animation -->
+            <div class="stats-container">
+                <div class="stats-slider" id="stats-slider">
+                    
+                    <!-- ODI STATS -->
+                    <div class="stats-section active" data-format="odi">
+                        <h2 class="section-title">ODI Statistics</h2>
+                        
+                        <!-- Batting Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">🏏</span>
+                                <h3 class="category-title">Batting</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Matches</span>
+                                    <span class="stat-value">275</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Innings</span>
+                                    <span class="stat-value">267</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Runs</span>
+                                    <span class="stat-value">13,500</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Average</span>
+                                    <span class="stat-value">58.2</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Strike Rate</span>
+                                    <span class="stat-value">93.6</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">100s</span>
+                                    <span class="stat-value">50</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">50s</span>
+                                    <span class="stat-value">65</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">4s</span>
+                                    <span class="stat-value">1,234</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">6s</span>
+                                    <span class="stat-value">156</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Highest Score</span>
+                                    <span class="stat-value">183</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bowling Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">⚡</span>
+                                <h3 class="category-title">Bowling</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Wickets</span>
+                                    <span class="stat-value">4</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Average</span>
+                                    <span class="stat-value">166.25</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Economy</span>
+                                    <span class="stat-value">6.21</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Best Figures</span>
+                                    <span class="stat-value">1/15</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fielding Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">🧤</span>
+                                <h3 class="category-title">Fielding</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Catches</span>
+                                    <span class="stat-value">134</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Run Outs</span>
+                                    <span class="stat-value">28</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Stumpings</span>
+                                    <span class="stat-value">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEST STATS -->
+                    <div class="stats-section" data-format="test">
+                        <h2 class="section-title">Test Statistics</h2>
+                        
+                        <!-- Batting Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">🏏</span>
+                                <h3 class="category-title">Batting</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Matches</span>
+                                    <span class="stat-value">113</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Innings</span>
+                                    <span class="stat-value">194</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Runs</span>
+                                    <span class="stat-value">8,800</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Average</span>
+                                    <span class="stat-value">48.9</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Strike Rate</span>
+                                    <span class="stat-value">56.2</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">100s</span>
+                                    <span class="stat-value">29</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">50s</span>
+                                    <span class="stat-value">31</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">4s</span>
+                                    <span class="stat-value">982</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">6s</span>
+                                    <span class="stat-value">24</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Highest Score</span>
+                                    <span class="stat-value">254*</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bowling Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">⚡</span>
+                                <h3 class="category-title">Bowling</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Wickets</span>
+                                    <span class="stat-value">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Average</span>
+                                    <span class="stat-value">--</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Economy</span>
+                                    <span class="stat-value">--</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Best Figures</span>
+                                    <span class="stat-value">--</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fielding Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">🧤</span>
+                                <h3 class="category-title">Fielding</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Catches</span>
+                                    <span class="stat-value">116</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Run Outs</span>
+                                    <span class="stat-value">12</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Stumpings</span>
+                                    <span class="stat-value">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- T20I STATS -->
+                    <div class="stats-section" data-format="t20i">
+                        <h2 class="section-title">T20I Statistics</h2>
+                        
+                        <!-- Batting Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">🏏</span>
+                                <h3 class="category-title">Batting</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Matches</span>
+                                    <span class="stat-value">115</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Innings</span>
+                                    <span class="stat-value">107</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Runs</span>
+                                    <span class="stat-value">4,000</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Average</span>
+                                    <span class="stat-value">52.7</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Strike Rate</span>
+                                    <span class="stat-value">137.9</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">100s</span>
+                                    <span class="stat-value">1</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">50s</span>
+                                    <span class="stat-value">37</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">4s</span>
+                                    <span class="stat-value">356</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">6s</span>
+                                    <span class="stat-value">117</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Highest Score</span>
+                                    <span class="stat-value">122*</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bowling Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">⚡</span>
+                                <h3 class="category-title">Bowling</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Wickets</span>
+                                    <span class="stat-value">4</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Average</span>
+                                    <span class="stat-value">62.25</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Economy</span>
+                                    <span class="stat-value">9.04</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Best Figures</span>
+                                    <span class="stat-value">1/12</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fielding Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">🧤</span>
+                                <h3 class="category-title">Fielding</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Catches</span>
+                                    <span class="stat-value">58</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Run Outs</span>
+                                    <span class="stat-value">8</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Stumpings</span>
+                                    <span class="stat-value">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OVERALL STATS -->
+                    <div class="stats-section" data-format="overall">
+                        <h2 class="section-title">Overall Career Statistics</h2>
+                        
+                        <!-- Batting Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">🏏</span>
+                                <h3 class="category-title">Batting (All Formats)</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Matches</span>
+                                    <span class="stat-value">503</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Innings</span>
+                                    <span class="stat-value">568</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Runs</span>
+                                    <span class="stat-value">26,300</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Overall Average</span>
+                                    <span class="stat-value">53.5</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Overall Strike Rate</span>
+                                    <span class="stat-value">93.2</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total 100s</span>
+                                    <span class="stat-value">80</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total 50s</span>
+                                    <span class="stat-value">133</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total 4s</span>
+                                    <span class="stat-value">2,572</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total 6s</span>
+                                    <span class="stat-value">297</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Highest Score</span>
+                                    <span class="stat-value">254*</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Combined Stats -->
+                        <div class="stats-category">
+                            <div class="category-header">
+                                <span class="category-icon">📊</span>
+                                <h3 class="category-title">Combined Performance</h3>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Wickets</span>
+                                    <span class="stat-value">8</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Catches</span>
+                                    <span class="stat-value">308</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Total Run Outs</span>
+                                    <span class="stat-value">48</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Consistency Index</span>
+                                    <span class="stat-value">12.4</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="records-script.js"></script>
+</body>
+</html>

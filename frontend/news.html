@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket News - Cricket Analytics</title>
+    <link rel="stylesheet" href="news-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">
+                <span class="logo-icon">🏏</span>
+                <span class="logo-text">CRICKET ANALYTICS</span>
+            </a>
+            <div class="nav-actions">
+                <a href="player.html" class="nav-back">← Back</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breaking Ticker -->
+    <div class="news-ticker">
+        <span class="ticker-label">LIVE</span>
+        <div class="ticker-track-wrapper">
+            <div class="ticker-track" id="ticker-track">
+                <span class="ticker-item">Loading latest cricket news...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header class="news-header">
+        <div class="header-content">
+            <h1 class="news-title">Cricket News</h1>
+            <p class="news-subtitle">Live updates from Cricbuzz</p>
+            <div class="source-badge">
+                <span class="source-dot"></span>
+                <span class="source-text">Source: Cricbuzz RSS</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Loading State -->
+    <div class="loading-state" id="loading-state">
+        <div class="loading-ring"></div>
+        <p class="loading-text">Fetching live news from Cricbuzz...</p>
+    </div>
+
+    <!-- Error State -->
+    <div class="error-state" id="error-state" style="display:none;">
+        <div class="error-icon">📡</div>
+        <h2 class="error-title">Unable to Fetch Live News</h2>
+        <p class="error-desc">Your browser may be blocking cross-origin requests. Showing cached articles instead.</p>
+        <button class="retry-btn" id="retry-btn">↺ Retry</button>
+    </div>
+
+    <!-- Magazine Layout -->
+    <main class="magazine-layout" id="magazine-layout" style="display:none;">
+
+        <!-- LEFT: Hero + Article Grid -->
+        <div class="magazine-left">
+
+            <!-- Hero Article -->
+            <div class="hero-article" id="hero-article">
+                <div class="hero-category" id="hero-category">CRICKET</div>
+                <h2 class="hero-title" id="hero-title">Loading...</h2>
+                <p class="hero-excerpt" id="hero-excerpt">Fetching latest article...</p>
+                <div class="hero-meta">
+                    <span class="hero-time" id="hero-time">--</span>
+                    <a class="hero-link" id="hero-link" href="#" target="_blank">
+                        Read on Cricbuzz →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Article Grid -->
+            <div class="article-grid" id="article-grid">
+                <!-- Cards inserted here -->
+            </div>
+
+        </div>
+
+        <!-- RIGHT: Sidebar -->
+        <aside class="magazine-sidebar">
+
+            <!-- Latest Updates -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">
+                    <span class="sidebar-icon">⚡</span>
+                    Latest Updates
+                </h3>
+                <div class="sidebar-feed" id="sidebar-feed">
+                    <!-- Items inserted here -->
+                </div>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">Cricket Analytics Platform</p>
+        <p class="footer-subtext">News sourced live from Cricbuzz RSS</p>
+    </footer>
+
+    <script src="news-script.js"></script>
+</body>
+</html>

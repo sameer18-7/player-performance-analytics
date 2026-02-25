@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Performance Analytics Dashboard</title>
+    <link rel="stylesheet" href="home-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- HERO SECTION - PRESERVED STRUCTURE -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <!-- Cricket Icon -->
+            <div class="hero-icon">🏏</div>
+            
+            <!-- Main Gradient Headline -->
+            <h1 class="hero-title">Player Performance Analytics</h1>
+            
+            <!-- Subtitle -->
+            <p class="hero-subtitle">Data-driven insights into cricket player performance, consistency, and trends.</p>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" 
+                       id="player-search" 
+                       class="player-search" 
+                       placeholder="Search player (e.g. Virat Kohli)">
+                <button class="search-btn">Search</button>
+                <a href="favourites.html" class="fav-icon-btn" title="View Favourites">
+                    <span class="fav-icon">⭐</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEY INSIGHTS SECTION - PRESERVED -->
+    <section class="insights-banner">
+        <h2 class="section-label">Key Insights</h2>
+        <div class="insights-slider">
+            <div class="insight-track">
+                <div class="insight-item">Elite consistency across formats</div>
+                <div class="insight-item">Strong upward ODI performance trend</div>
+                <div class="insight-item">High strike rate under pressure</div>
+                <div class="insight-item">Chase master with 50+ centuries</div>
+                <div class="insight-item">Record-breaking consistency index</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="insight-item">Elite consistency across formats</div>
+                <div class="insight-item">Strong upward ODI performance trend</div>
+                <div class="insight-item">High strike rate under pressure</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW ANALYTICS DASHBOARD SECTION -->
+    <section class="analytics-dashboard">
+        <div class="dashboard-container">
+            <h2 class="dashboard-title">Understand Our Metrics</h2>
+            <p class="dashboard-subtitle">Explore the comprehensive analytical capabilities of our platform</p>
+            
+            <!-- Main Stats Grid -->
+            <div class="stats-mega-grid">
+                
+                <!-- Batting Metrics Block -->
+                <div class="stat-block batting-block">
+                    <div class="block-header">
+                        <span class="block-icon">🏏</span>
+                        <h3 class="block-title">Batting Metrics</h3>
+                    </div>
+                    <div class="metric-description">
+                        <p>Comprehensive batting analysis including career runs, batting averages, strike rates, centuries, half-centuries, boundaries, and highest scores. Track performance consistency across different match situations and opposition teams.</p>
+                        <ul class="metric-points">
+                            <li>Total career runs across all formats</li>
+                            <li>Batting average and strike rate analysis</li>
+                            <li>Milestone tracking (100s, 50s, boundaries)</li>
+                            <li>Situational performance metrics</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bowling Metrics Block -->
+                <div class="stat-block bowling-block">
+                    <div class="block-header">
+                        <span class="block-icon">⚡</span>
+                        <h3 class="block-title">Bowling Metrics</h3>
+                    </div>
+                    <div class="metric-description">
+                        <p>In-depth bowling statistics covering total wickets, bowling averages, economy rates, strike rates, and milestone performances like 5-wicket and 10-wicket hauls. Analyze bowling effectiveness across different phases of play.</p>
+                        <ul class="metric-points">
+                            <li>Career wickets and bowling average</li>
+                            <li>Economy rate and strike rate tracking</li>
+                            <li>5-wicket hauls and best bowling figures</li>
+                            <li>Phase-wise bowling analysis (powerplay, middle, death)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Format Analysis Block -->
+                <div class="stat-block format-block">
+                    <div class="block-header">
+                        <span class="block-icon">🎯</span>
+                        <h3 class="block-title">Format-Wise Analysis</h3>
+                    </div>
+                    <div class="metric-description">
+                        <p>Detailed breakdowns for each cricket format including ODIs, Tests, T20 Internationals, and franchise leagues like IPL, BBL, and The Hundred. Compare performance across different playing conditions and formats.</p>
+                        <ul class="metric-points">
+                            <li>ODI cricket statistics and records</li>
+                            <li>Test cricket performance metrics</li>
+                            <li>T20 International batting and bowling data</li>
+                            <li>IPL, BBL, and The Hundred franchise stats</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fielding Metrics Block -->
+                <div class="stat-block fielding-block">
+                    <div class="block-header">
+                        <span class="block-icon">🧤</span>
+                        <h3 class="block-title">Fielding Metrics</h3>
+                    </div>
+                    <div class="metric-description">
+                        <p>Complete fielding statistics including catches taken, run-outs executed, stumpings, and overall fielding ratings. Evaluate defensive contributions and game-changing moments in the field.</p>
+                        <ul class="metric-points">
+                            <li>Total catches across all positions</li>
+                            <li>Direct hit run-outs and assists</li>
+                            <li>Wicketkeeping stats (for keepers)</li>
+                            <li>Fielding efficiency and drop rate analysis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Performance Trends Block -->
+                <div class="stat-block trends-block">
+                    <div class="block-header">
+                        <span class="block-icon">📈</span>
+                        <h3 class="block-title">Performance Trends</h3>
+                    </div>
+                    <div class="metric-description">
+                        <p>Visual representations of career trajectories, recent form analysis, peak performance periods, and consistency patterns over time. Interactive graphs show trends across seasons and match types.</p>
+                        <ul class="metric-points">
+                            <li>Career progression timelines and graphs</li>
+                            <li>Recent form and momentum analysis</li>
+                            <li>Peak performance period identification</li>
+                            <li>Season-by-season comparison charts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Player Comparison Block -->
+                <div class="stat-block comparison-block">
+                    <div class="block-header">
+                        <span class="block-icon">⚖️</span>
+                        <h3 class="block-title">Player Comparison</h3>
+                    </div>
+                    <div class="metric-description">
+                        <p>Advanced head-to-head player comparison tools allowing you to analyze multiple players simultaneously. Compare statistics across formats, eras, playing styles, and match situations with visual charts.</p>
+                        <ul class="metric-points">
+                            <li>Head-to-head statistical comparisons</li>
+                            <li>Format-specific performance analysis</li>
+                            <li>Era-adjusted metrics for fair comparison</li>
+                            <li>Visual radar charts and performance graphs</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Player Performance Analytics Dashboard</p>
+            <p class="footer-subtext">Powered by Advanced Cricket Intelligence</p>
+        </div>
+    </footer>
+
+    <script src="home-script.js"></script>
+</body>
+</html>

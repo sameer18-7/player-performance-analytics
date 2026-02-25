@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Performance - Cricket Analytics</title>
+    <link rel="stylesheet" href="recent-performance-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <!-- Navigation Header -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">
+                <span class="logo-icon">🏏</span>
+                <span class="logo-text">CRICKET ANALYTICS</span>
+            </a>
+            <div class="nav-actions">
+                <a href="player.html" class="nav-back">← Back to Options</a>
+                <div class="nav-player-name" id="nav-player-name">Loading...</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout Container -->
+    <div class="recent-layout">
+        
+        <!-- LEFT PANEL - PERSISTENT PROFILE (SAME AS RECORDS PAGE) -->
+        <aside class="profile-panel" id="profile-panel">
+            
+            <!-- Player Bio Card -->
+            <div class="profile-card bio-card">
+                <div class="card-header">
+                    <span class="card-icon">👤</span>
+                    <h3 class="card-title">Player Profile</h3>
+                </div>
+                
+                <div class="player-photo-wrapper">
+                    <div class="player-photo" id="player-photo">
+                        <span class="photo-initial" id="photo-initial">V</span>
+                    </div>
+                    <button class="floating-heart-btn" id="floating-heart-btn" title="Add to Favourites">
+                        <span class="heart-icon">♡</span>
+                    </button>
+                </div>
+                
+                <div class="bio-content">
+                    <div class="bio-field">
+                        <span class="field-label">Full Name</span>
+                        <span class="field-value" id="full-name">Virat Kohli</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Date of Birth</span>
+                        <span class="field-value" id="dob">November 5, 1988 (36 years)</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Birthplace</span>
+                        <span class="field-value" id="birthplace">Delhi, India</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Nickname</span>
+                        <span class="field-value" id="nickname">King Kohli, Chikoo</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Role</span>
+                        <span class="field-value" id="role">Batsman</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Batting Style</span>
+                        <span class="field-value" id="batting-style">Right-hand bat</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Bowling Style</span>
+                        <span class="field-value" id="bowling-style">Right-arm medium</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">National Team</span>
+                        <span class="field-value" id="national-team">India</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">IPL Teams</span>
+                        <span class="field-value" id="ipl-teams">Royal Challengers Bangalore</span>
+                    </div>
+                    <div class="bio-field">
+                        <span class="field-label">Other Teams</span>
+                        <span class="field-value" id="other-teams">Delhi, South Delhi</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ICC Rankings Card -->
+            <div class="profile-card rankings-card">
+                <div class="card-header">
+                    <span class="card-icon">🏆</span>
+                    <h3 class="card-title">ICC Rankings</h3>
+                </div>
+                
+                <div class="rankings-content">
+                    
+                    <!-- Test Rankings -->
+                    <div class="ranking-format">
+                        <div class="format-header">
+                            <span class="format-badge test">Test</span>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="ranking-item">
+                                <span class="rank-label">Batting</span>
+                                <div class="rank-values">
+                                    <span class="current-rank" id="test-bat-current">8</span>
+                                    <span class="rank-separator">/</span>
+                                    <span class="best-rank">Best: <span id="test-bat-best">1</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ODI Rankings -->
+                    <div class="ranking-format">
+                        <div class="format-header">
+                            <span class="format-badge odi">ODI</span>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="ranking-item">
+                                <span class="rank-label">Batting</span>
+                                <div class="rank-values">
+                                    <span class="current-rank" id="odi-bat-current">5</span>
+                                    <span class="rank-separator">/</span>
+                                    <span class="best-rank">Best: <span id="odi-bat-best">1</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- T20I Rankings -->
+                    <div class="ranking-format">
+                        <div class="format-header">
+                            <span class="format-badge t20">T20I</span>
+                        </div>
+                        <div class="ranking-stats">
+                            <div class="ranking-item">
+                                <span class="rank-label">Batting</span>
+                                <div class="rank-values">
+                                    <span class="current-rank" id="t20-bat-current">12</span>
+                                    <span class="rank-separator">/</span>
+                                    <span class="best-rank">Best: <span id="t20-bat-best">1</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- RIGHT PANEL - RECENT PERFORMANCE ANALYTICS -->
+        <main class="performance-panel">
+            
+            <div class="performance-header">
+                <h1 class="performance-title">Recent Performance</h1>
+                <p class="performance-subtitle">Latest matches, current form, and trend analysis</p>
+            </div>
+
+            <!-- Current Form Summary -->
+            <div class="form-summary">
+                <div class="form-card">
+                    <div class="form-icon">📈</div>
+                    <div class="form-content">
+                        <div class="form-label">Current Form</div>
+                        <div class="form-value">Excellent</div>
+                        <div class="form-streak">5-match win streak</div>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <div class="form-icon">🎯</div>
+                    <div class="form-content">
+                        <div class="form-label">Last 10 Average</div>
+                        <div class="form-value">67.8</div>
+                        <div class="form-streak">+12.3 vs career avg</div>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <div class="form-icon">⚡</div>
+                    <div class="form-content">
+                        <div class="form-label">Recent Strike Rate</div>
+                        <div class="form-value">142.5</div>
+                        <div class="form-streak">Best in 2 years</div>
+                    </div>
+                </div>
+
+                <div class="form-card">
+                    <div class="form-icon">🔥</div>
+                    <div class="form-content">
+                        <div class="form-label">Highest Recent Score</div>
+                        <div class="form-value">103*</div>
+                        <div class="form-streak">vs Australia</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Last 10 Matches Graph -->
+            <div class="graph-section">
+                <h2 class="section-title">Last 10 Matches Performance</h2>
+                <div class="graph-card">
+                    <div class="graph-container">
+                        <canvas id="last-10-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Matches Timeline -->
+            <div class="timeline-section">
+                <h2 class="section-title">Match-by-Match Breakdown</h2>
+                
+                <div class="timeline-grid">
+                    
+                    <div class="match-card won">
+                        <div class="match-header">
+                            <div class="match-date">Feb 10, 2026</div>
+                            <div class="match-result result-won">WON</div>
+                        </div>
+                        <div class="match-opponent">
+                            <span class="vs-text">vs</span>
+                            <span class="opponent-name">Australia</span>
+                        </div>
+                        <div class="match-format">ODI • Adelaide</div>
+                        <div class="match-stats">
+                            <div class="stat">
+                                <span class="stat-label">Runs</span>
+                                <span class="stat-value">103*</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Balls</span>
+                                <span class="stat-value">85</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">SR</span>
+                                <span class="stat-value">121.2</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">4s/6s</span>
+                                <span class="stat-value">8/2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="match-card won">
+                        <div class="match-header">
+                            <div class="match-date">Feb 7, 2026</div>
+                            <div class="match-result result-won">WON</div>
+                        </div>
+                        <div class="match-opponent">
+                            <span class="vs-text">vs</span>
+                            <span class="opponent-name">England</span>
+                        </div>
+                        <div class="match-format">T20I • Mumbai</div>
+                        <div class="match-stats">
+                            <div class="stat">
+                                <span class="stat-label">Runs</span>
+                                <span class="stat-value">79</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Balls</span>
+                                <span class="stat-value">48</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">SR</span>
+                                <span class="stat-value">164.6</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">4s/6s</span>
+                                <span class="stat-value">6/4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="match-card won">
+                        <div class="match-header">
+                            <div class="match-date">Feb 3, 2026</div>
+                            <div class="match-result result-won">WON</div>
+                        </div>
+                        <div class="match-opponent">
+                            <span class="vs-text">vs</span>
+                            <span class="opponent-name">South Africa</span>
+                        </div>
+                        <div class="match-format">ODI • Cape Town</div>
+                        <div class="match-stats">
+                            <div class="stat">
+                                <span class="stat-label">Runs</span>
+                                <span class="stat-value">87</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Balls</span>
+                                <span class="stat-value">72</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">SR</span>
+                                <span class="stat-value">120.8</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">4s/6s</span>
+                                <span class="stat-value">9/1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="match-card lost">
+                        <div class="match-header">
+                            <div class="match-date">Jan 29, 2026</div>
+                            <div class="match-result result-lost">LOST</div>
+                        </div>
+                        <div class="match-opponent">
+                            <span class="vs-text">vs</span>
+                            <span class="opponent-name">New Zealand</span>
+                        </div>
+                        <div class="match-format">T20I • Auckland</div>
+                        <div class="match-stats">
+                            <div class="stat">
+                                <span class="stat-label">Runs</span>
+                                <span class="stat-value">34</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Balls</span>
+                                <span class="stat-value">28</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">SR</span>
+                                <span class="stat-value">121.4</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">4s/6s</span>
+                                <span class="stat-value">3/1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="match-card won">
+                        <div class="match-header">
+                            <div class="match-date">Jan 25, 2026</div>
+                            <div class="match-result result-won">WON</div>
+                        </div>
+                        <div class="match-opponent">
+                            <span class="vs-text">vs</span>
+                            <span class="opponent-name">Pakistan</span>
+                        </div>
+                        <div class="match-format">ODI • Dubai</div>
+                        <div class="match-stats">
+                            <div class="stat">
+                                <span class="stat-label">Runs</span>
+                                <span class="stat-value">92</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Balls</span>
+                                <span class="stat-value">78</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">SR</span>
+                                <span class="stat-value">117.9</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">4s/6s</span>
+                                <span class="stat-value">10/2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="match-card won">
+                        <div class="match-header">
+                            <div class="match-date">Jan 21, 2026</div>
+                            <div class="match-result result-won">WON</div>
+                        </div>
+                        <div class="match-opponent">
+                            <span class="vs-text">vs</span>
+                            <span class="opponent-name">Sri Lanka</span>
+                        </div>
+                        <div class="match-format">T20I • Colombo</div>
+                        <div class="match-stats">
+                            <div class="stat">
+                                <span class="stat-label">Runs</span>
+                                <span class="stat-value">56</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Balls</span>
+                                <span class="stat-value">38</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">SR</span>
+                                <span class="stat-value">147.4</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">4s/6s</span>
+                                <span class="stat-value">5/2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Form Trends -->
+            <div class="trends-section">
+                <h2 class="section-title">Form Trends</h2>
+                
+                <div class="trends-grid">
+                    
+                    <div class="trend-card">
+                        <div class="trend-header">
+                            <h3 class="trend-title">Scoring Rate Progression</h3>
+                        </div>
+                        <div class="trend-chart-container">
+                            <canvas id="scoring-rate-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="trend-card">
+                        <div class="trend-header">
+                            <h3 class="trend-title">Consistency Meter</h3>
+                        </div>
+                        <div class="consistency-bars">
+                            <div class="consistency-bar">
+                                <div class="bar-label">Last 5 Matches</div>
+                                <div class="bar-track">
+                                    <div class="bar-fill" style="width: 88%"></div>
+                                </div>
+                                <div class="bar-value">88%</div>
+                            </div>
+                            <div class="consistency-bar">
+                                <div class="bar-label">Last 10 Matches</div>
+                                <div class="bar-track">
+                                    <div class="bar-fill" style="width: 75%"></div>
+                                </div>
+                                <div class="bar-value">75%</div>
+                            </div>
+                            <div class="consistency-bar">
+                                <div class="bar-label">Last 20 Matches</div>
+                                <div class="bar-track">
+                                    <div class="bar-fill" style="width: 82%"></div>
+                                </div>
+                                <div class="bar-value">82%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="recent-performance-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Comparison - Cricket Analytics</title>
+    <link rel="stylesheet" href="compare-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <!-- Navigation Header -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">
+                <span class="logo-icon">🏏</span>
+                <span class="logo-text">CRICKET ANALYTICS</span>
+            </a>
+            <div class="nav-actions">
+                <a href="player.html" class="nav-back">← Back</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Compare Header -->
+    <header class="compare-header">
+        <h1 class="compare-title">Player Comparison</h1>
+        <p class="compare-subtitle">Side-by-side performance analysis</p>
+    </header>
+
+    <!-- Player Selection Bar -->
+    <section class="player-selection-bar">
+        <div class="selection-container">
+            
+            <!-- Search Input with Autocomplete and MAXX Button -->
+            <div class="search-and-maxx-row">
+                <div class="search-wrapper">
+                    <input type="text" 
+                           id="player-search-input" 
+                           class="player-search-input" 
+                           placeholder="Search player name...">
+                    <div class="autocomplete-dropdown" id="autocomplete-dropdown"></div>
+                </div>
+                
+                <!-- MAXX PERFORMA Button -->
+                <button class="maxx-performa-btn" id="maxx-performa-btn" style="display: none;">
+                    <span class="maxx-badge">ADVANCED</span>
+                    <span class="maxx-icon">⚡</span>
+                    <span class="maxx-text">MAXX PERFORMA</span>
+                </button>
+            </div>
+
+            <!-- Added Player Slots (Max 3) -->
+            <div class="player-slots">
+                <div class="player-slot empty" id="slot-1">
+                    <span class="add-placeholder">+ Add Player</span>
+                </div>
+                <div class="player-slot empty" id="slot-2">
+                    <span class="add-placeholder">+ Add Player</span>
+                </div>
+                <div class="player-slot empty" id="slot-3">
+                    <span class="add-placeholder">+ Add Player</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Main Comparison Container -->
+    <main class="comparison-main">
+
+        <!-- Normal Stats View (Default) -->
+        <section class="normal-stats-view" id="normal-stats-view">
+            
+            <!-- Stats will be dynamically inserted here -->
+            <div class="comparison-grid" id="comparison-grid">
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-icon">⚖️</div>
+                    <h2 class="empty-title">No Players Selected</h2>
+                    <p class="empty-description">Add players above to start comparing</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Liquid Glass Overlay -->
+        <div class="liquid-glass-overlay" id="liquid-glass-overlay"></div>
+
+        <!-- MAXX PERFORMA View (Hidden by default) -->
+        <section class="maxx-performa-view" id="maxx-performa-view" style="display: none;">
+            
+            <!-- Back Button -->
+            <button class="back-to-normal-btn" id="back-to-normal-btn">
+                ← Back to Normal Stats
+            </button>
+
+            <!-- MAXX PERFORMA Content will be dynamically inserted here -->
+            <div class="maxx-comparison-grid" id="maxx-comparison-grid"></div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Player Comparison Tool</p>
+            <p class="footer-subtext">Advanced Side-by-Side Analytics</p>
+        </div>
+    </footer>
+
+    <script src="compare-script.js"></script>
+</body>
+</html>

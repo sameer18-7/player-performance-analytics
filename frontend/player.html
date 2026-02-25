@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Options - Cricket Analytics</title>
+    <link rel="stylesheet" href="player-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Navigation Header -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">
+                <span class="logo-icon">🏏</span>
+                <span class="logo-text">CRICKET ANALYTICS</span>
+            </a>
+            <div class="nav-player-name" id="nav-player-name">Loading...</div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="player-options-container">
+
+        <!-- Options Grid -->
+        <section class="options-section">
+            <h2 class="section-title">Analysis Modules</h2>
+            
+            <div class="options-grid">
+                
+                <!-- Option 1: Player Records -->
+                <div class="option-card" data-page="records.html">
+                    <div class="card-glow"></div>
+                    <div class="card-icon-wrapper">
+                        <span class="card-icon">📊</span>
+                    </div>
+                    <h3 class="card-title">Player Records</h3>
+                    <p class="card-description">Comprehensive career statistics across all formats with advanced filtering</p>
+                    <ul class="card-features">
+                        <li>✓ Format-wise breakdown (ODI, Test, T20I)</li>
+                        <li>✓ Batting & bowling statistics</li>
+                        <li>✓ Fielding performance metrics</li>
+                        <li>✓ ICC ranking history</li>
+                    </ul>
+                    <div class="card-action">
+                        <span class="action-text">View Records</span>
+                        <span class="action-arrow">→</span>
+                    </div>
+                </div>
+
+                <!-- Option 2: MAXX PERFORMA -->
+                <div class="option-card featured" data-page="maxx_performa.html">
+                    <div class="featured-badge">ADVANCED</div>
+                    <div class="card-glow"></div>
+                    <div class="card-icon-wrapper">
+                        <span class="card-icon">⚡</span>
+                    </div>
+                    <h3 class="card-title">MAXX PERFORMA</h3>
+                    <p class="card-description">Elite analytics engine with performance intelligence and visual insights</p>
+                    <ul class="card-features">
+                        <li>✓ Interactive performance charts</li>
+                        <li>✓ IPL & franchise analytics</li>
+                        <li>✓ Prime phase detection</li>
+                        <li>✓ Impact index scoring</li>
+                        <li>✓ Player comparison mode</li>
+                    </ul>
+                    <div class="card-action">
+                        <span class="action-text">Launch Analytics</span>
+                        <span class="action-arrow">→</span>
+                    </div>
+                </div>
+
+                <!-- Option 3: Recent Performance -->
+                <div class="option-card" data-page="recent_performance.html">
+                    <div class="card-glow"></div>
+                    <div class="card-icon-wrapper">
+                        <span class="card-icon">📈</span>
+                    </div>
+                    <h3 class="card-title">Recent Performance</h3>
+                    <p class="card-description">Latest match data, current form analysis, and recent trend visualization</p>
+                    <ul class="card-features">
+                        <li>✓ Last 10 matches breakdown</li>
+                        <li>✓ Current form trends</li>
+                        <li>✓ Match-by-match analysis</li>
+                        <li>✓ Performance graphs</li>
+                    </ul>
+                    <div class="card-action">
+                        <span class="action-text">View Recent Stats</span>
+                        <span class="action-arrow">→</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Compare & News Bars -->
+            <div class="action-bars">
+                
+                <!-- Compare Bar -->
+                <a href="compare.html" class="action-bar compare-bar">
+                    <div class="bar-icon">⚖️</div>
+                    <div class="bar-content">
+                        <h3 class="bar-title">Player Comparison</h3>
+                        <p class="bar-description">Compare multiple players side-by-side with advanced metrics</p>
+                    </div>
+                    <div class="bar-arrow">→</div>
+                </a>
+
+                <!-- News Bar -->
+                <a href="news.html" class="action-bar news-bar">
+                    <div class="bar-icon">📰</div>
+                    <div class="bar-content">
+                        <h3 class="bar-title">Cricket News & Updates</h3>
+                        <p class="bar-description">Latest cricket news, match updates, and player announcements</p>
+                    </div>
+                    <div class="bar-arrow">→</div>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Cricket Analytics Platform</p>
+            <p class="footer-subtext">Advanced Performance Intelligence System</p>
+        </div>
+    </footer>
+
+    <script src="player-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourites - Cricket Analytics</title>
+    <link rel="stylesheet" href="favourites-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Navigation Header -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">
+                <span class="logo-icon">🏏</span>
+                <span class="logo-text">CRICKET ANALYTICS</span>
+            </a>
+            <div class="nav-actions">
+                <a href="home.html" class="nav-back">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bookmark Bar (Chrome-style) -->
+    <div class="bookmark-bar" id="bookmark-bar">
+        <div class="bookmark-container">
+            <div class="bookmark-header">
+                <span class="bookmark-icon">⭐</span>
+                <h3 class="bookmark-title">Favourites</h3>
+            </div>
+            <div class="bookmark-items" id="bookmark-items">
+                <!-- Bookmarks will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="favourites-container">
+        
+        <!-- Empty State -->
+        <div class="empty-state" id="empty-state">
+            <div class="empty-icon">💔</div>
+            <h2 class="empty-title">No Favourites Yet</h2>
+            <p class="empty-description">Add players to your favourites to see their stats here</p>
+            <a href="home.html" class="empty-cta">Search for Players</a>
+        </div>
+
+        <!-- Player Stats Display -->
+        <div class="player-stats-section" id="player-stats-section" style="display: none;">
+            
+            <div class="stats-header">
+                <h1 class="stats-title" id="stats-player-name">Select a Player</h1>
+                <button class="remove-fav-btn" id="remove-fav-btn">
+                    <span class="remove-icon">✕</span>
+                    Remove from Favourites
+                </button>
+            </div>
+
+            <!-- Quick Stats Grid -->
+            <div class="quick-stats-grid">
+                
+                <div class="quick-stat-card">
+                    <div class="qstat-icon">🏏</div>
+                    <div class="qstat-content">
+                        <div class="qstat-label">Total Runs</div>
+                        <div class="qstat-value" id="qstat-runs">--</div>
+                    </div>
+                </div>
+
+                <div class="quick-stat-card">
+                    <div class="qstat-icon">📊</div>
+                    <div class="qstat-content">
+                        <div class="qstat-label">Batting Average</div>
+                        <div class="qstat-value" id="qstat-avg">--</div>
+                    </div>
+                </div>
+
+                <div class="quick-stat-card">
+                    <div class="qstat-icon">⚡</div>
+                    <div class="qstat-content">
+                        <div class="qstat-label">Strike Rate</div>
+                        <div class="qstat-value" id="qstat-sr">--</div>
+                    </div>
+                </div>
+
+                <div class="quick-stat-card">
+                    <div class="qstat-icon">💯</div>
+                    <div class="qstat-content">
+                        <div class="qstat-label">Centuries</div>
+                        <div class="qstat-value" id="qstat-centuries">--</div>
+                    </div>
+                </div>
+
+                <div class="quick-stat-card">
+                    <div class="qstat-icon">🎯</div>
+                    <div class="qstat-content">
+                        <div class="qstat-label">Matches</div>
+                        <div class="qstat-value" id="qstat-matches">--</div>
+                    </div>
+                </div>
+
+                <div class="quick-stat-card">
+                    <div class="qstat-icon">📈</div>
+                    <div class="qstat-content">
+                        <div class="qstat-label">Consistency</div>
+                        <div class="qstat-value" id="qstat-consistency">--</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Format Breakdown -->
+            <div class="format-breakdown">
+                <h2 class="section-title">Format Breakdown</h2>
+                
+                <div class="format-cards-grid">
+                    
+                    <!-- ODI Card -->
+                    <div class="format-stat-card">
+                        <div class="format-card-header">
+                            <span class="format-badge odi">ODI</span>
+                        </div>
+                        <div class="format-stats-list">
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Matches</span>
+                                <span class="fstat-value" id="odi-matches">--</span>
+                            </div>
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Runs</span>
+                                <span class="fstat-value" id="odi-runs">--</span>
+                            </div>
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Average</span>
+                                <span class="fstat-value" id="odi-avg">--</span>
+                            </div>
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Centuries</span>
+                                <span class="fstat-value" id="odi-centuries">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Card -->
+                    <div class="format-stat-card">
+                        <div class="format-card-header">
+                            <span class="format-badge test">Test</span>
+                        </div>
+                        <div class="format-stats-list">
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Matches</span>
+                                <span class="fstat-value" id="test-matches">--</span>
+                            </div>
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Runs</span>
+                                <span class="fstat-value" id="test-runs">--</span>
+                            </div>
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Average</span>
+                                <span class="fstat-value" id="test-avg">--</span>
+                            </div>
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Centuries</span>
+                                <span class="fstat-value" id="test-centuries">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- T20I Card -->
+                    <div class="format-stat-card">
+                        <div class="format-card-header">
+                            <span class="format-badge t20">T20I</span>
+                        </div>
+                        <div class="format-stats-list">
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Matches</span>
+                                <span class="fstat-value" id="t20-matches">--</span>
+                            </div>
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Runs</span>
+                                <span class="fstat-value" id="t20-runs">--</span>
+                            </div>
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Strike Rate</span>
+                                <span class="fstat-value" id="t20-sr">--</span>
+                            </div>
+                            <div class="format-stat-item">
+                                <span class="fstat-label">Average</span>
+                                <span class="fstat-value" id="t20-avg">--</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <h2 class="section-title">View More</h2>
+                <div class="actions-grid">
+                    <a href="records.html" class="action-card">
+                        <span class="action-icon">📊</span>
+                        <span class="action-text">Full Records</span>
+                    </a>
+                    <a href="maxx_performa.html" class="action-card">
+                        <span class="action-icon">⚡</span>
+                        <span class="action-text">MAXX PERFORMA</span>
+                    </a>
+                    <a href="recent_performance.html" class="action-card">
+                        <span class="action-icon">📈</span>
+                        <span class="action-text">Recent Performance</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Cricket Analytics Platform</p>
+            <p class="footer-subtext">Your Favourite Players Hub</p>
+        </div>
+    </footer>
+
+    <script src="favourites-script.js"></script>
+</body>
+</html>
