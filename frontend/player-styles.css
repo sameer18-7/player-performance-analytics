@@ -155,7 +155,7 @@ body::after {
 .player-options-container {
     max-width: 1600px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     position: relative;
     z-index: 1;
 }
@@ -245,7 +245,7 @@ body::after {
 
 /* === OPTIONS SECTION === */
 .options-section {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .section-title {
@@ -254,7 +254,7 @@ body::after {
     font-weight: 900;
     color: var(--neon-cyan);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
@@ -273,7 +273,7 @@ body::after {
     backdrop-filter: blur(20px);
     border: 2px solid rgba(0, 245, 255, 0.2);
     border-radius: 20px;
-    padding: 2.5rem;
+    padding: 1rem 1.2rem;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     overflow: hidden;
@@ -340,14 +340,14 @@ body::after {
 }
 
 .card-icon-wrapper {
-    width: 80px;
-    height: 80px;
-    border-radius: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     background: rgba(0, 245, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    flex-shrink: 0;
     transition: all 0.3s ease;
 }
 
@@ -357,39 +357,50 @@ body::after {
 }
 
 .card-icon {
-    font-size: 3rem;
+    font-size: 1.6rem;
     filter: drop-shadow(var(--glow-cyan));
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .card-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 900;
     color: var(--text-prime);
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .card-description {
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
 }
 
 .card-features {
     list-style: none;
-    margin-bottom: 2rem;
+    font-size: 0.75rem;
+    padding: 0.25rem 0; /* was 2rem */
 }
 
 .card-features li {
     color: var(--text-secondary);
-    font-size: 0.85rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+    font-size: 0.8rem;      /* slightly smaller */
+    padding: 0.3rem 0;     /* was 0.5rem */
+    border-bottom: none;   /* remove height expansion */
     transition: all 0.3s ease;
 }
+/*.card-features li:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 245, 255, 0.08);
+}*/
 
 .card-features li:hover {
     color: var(--neon-cyan);
@@ -401,11 +412,12 @@ body::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 0.5rem 0.8rem;
     background: rgba(0, 245, 255, 0.05);
     border: 1px solid rgba(0, 245, 255, 0.2);
     border-radius: 12px;
     transition: all 0.3s ease;
+    margin-top: 0.6rem;
 }
 
 .option-card:hover .card-action {
@@ -523,7 +535,7 @@ body::after {
 /* === RESPONSIVE === */
 @media (max-width: 1200px) {
     .options-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);  /* force 3 in one row */
     }
 }
 
@@ -550,15 +562,15 @@ body::after {
 .action-bars {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 3rem;
+    gap: 1rem;          /* slightly tighter */
+    margin-top: 1.5rem; /* was 3rem */
 }
 
 .action-bar {
     display: flex;
     align-items: center;
     gap: 2rem;
-    padding: 2rem 2.5rem;
+    padding: 1.2rem 1.6rem;
     background: rgba(22, 27, 34, 0.6);
     backdrop-filter: blur(20px);
     border: 2px solid rgba(0, 245, 255, 0.2);
@@ -601,7 +613,7 @@ body::after {
 }
 
 .bar-icon {
-    font-size: 3rem;
+    font-size: 2.2rem;
     filter: drop-shadow(var(--glow-cyan));
     flex-shrink: 0;
     transition: all 0.3s ease;
@@ -617,7 +629,7 @@ body::after {
 
 .bar-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-prime);
     text-transform: uppercase;
@@ -639,7 +651,7 @@ body::after {
 }
 
 .bar-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     line-height: 1.5;
 }
